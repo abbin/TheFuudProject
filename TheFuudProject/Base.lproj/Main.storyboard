@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--First-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="9pv-A4-QxB" customClass="FirstViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
@@ -43,10 +44,136 @@
             </objects>
             <point key="canvasLocation" x="750" y="-320"/>
         </scene>
+        <!--Signin View Controller-->
+        <scene sceneID="FbA-aS-Xgw">
+            <objects>
+                <viewController id="LGx-e9-dc9" customClass="TFPSigninViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NtO-oI-pVX"/>
+                        <viewControllerLayoutGuide type="bottom" id="hPL-rd-Sdh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="R3m-AT-1yL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3qs-5t-UFZ">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="VXi-Ol-Imt"/>
+                                </constraints>
+                                <state key="normal" title="I'll sign in later">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="signinLater:" destination="LGx-e9-dc9" eventType="touchUpInside" id="iKc-iR-FnY"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bjy-u4-grR" customClass="FBSDKLoginButton">
+                                <color key="backgroundColor" red="0.23137254900000001" green="0.34901960780000002" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="wYq-dW-l0B"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ixE-CI-0l4">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ixE-CI-0l4" secondAttribute="height" multiplier="15:8" id="ATo-dy-bcr"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Bjy-u4-grR" firstAttribute="leading" secondItem="R3m-AT-1yL" secondAttribute="leading" constant="10" id="7ff-7a-TNL"/>
+                            <constraint firstAttribute="bottom" secondItem="3qs-5t-UFZ" secondAttribute="bottom" id="Fy6-Qc-xtb"/>
+                            <constraint firstItem="ixE-CI-0l4" firstAttribute="leading" secondItem="R3m-AT-1yL" secondAttribute="leading" id="PJp-DS-RVQ"/>
+                            <constraint firstItem="3qs-5t-UFZ" firstAttribute="top" secondItem="Bjy-u4-grR" secondAttribute="bottom" constant="20" id="Sn3-Hh-ijb"/>
+                            <constraint firstItem="ixE-CI-0l4" firstAttribute="centerY" secondItem="R3m-AT-1yL" secondAttribute="centerY" id="a0R-v8-Zxy"/>
+                            <constraint firstItem="3qs-5t-UFZ" firstAttribute="leading" secondItem="R3m-AT-1yL" secondAttribute="leading" id="aPV-WF-6uR"/>
+                            <constraint firstAttribute="trailing" secondItem="3qs-5t-UFZ" secondAttribute="trailing" id="ggf-0B-925"/>
+                            <constraint firstAttribute="trailing" secondItem="ixE-CI-0l4" secondAttribute="trailing" id="rzD-3h-jjt"/>
+                            <constraint firstAttribute="trailing" secondItem="Bjy-u4-grR" secondAttribute="trailing" constant="10" id="wlY-M4-cPA"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Rhg-iO-TS0"/>
+                    <connections>
+                        <outlet property="loginButton" destination="Bjy-u4-grR" id="hFk-bz-j6x"/>
+                        <outlet property="playerView" destination="ixE-CI-0l4" id="IMu-j3-6NR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YFF-mh-5fV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="583.20000000000005" y="1026.8365817091455"/>
+        </scene>
+        <!--Current Location View Controller-->
+        <scene sceneID="hfy-tw-AGn">
+            <objects>
+                <viewController storyboardIdentifier="TFPCurrentLocationViewController" id="syA-7X-Ath" customClass="TFPCurrentLocationViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mwc-vy-czC"/>
+                        <viewControllerLayoutGuide type="bottom" id="EJP-ya-0J9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ufP-mu-8xC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y7s-8I-92K">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="F6g-7N-S7T"/>
+                                </constraints>
+                                <state key="normal" title="set location manually">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="setLocationManually:" destination="syA-7X-Ath" eventType="touchUpInside" id="TdS-bn-gMx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jmm-ye-7Uq">
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Lfc-O4-wN5"/>
+                                </constraints>
+                                <state key="normal" title="Detect my location">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="detectLocation:" destination="syA-7X-Ath" eventType="touchUpInside" id="GqA-Cv-zAD"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uZ2-yK-XlV">
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gzQ-LS-CTN"/>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="gzQ-LS-CTN" secondAttribute="trailing" id="8Lm-En-mir"/>
+                                    <constraint firstAttribute="bottom" secondItem="gzQ-LS-CTN" secondAttribute="bottom" id="Dza-GP-287"/>
+                                    <constraint firstItem="gzQ-LS-CTN" firstAttribute="leading" secondItem="uZ2-yK-XlV" secondAttribute="leading" id="FGY-IY-XvZ"/>
+                                    <constraint firstAttribute="width" secondItem="uZ2-yK-XlV" secondAttribute="height" multiplier="15:8" id="QOz-Wh-c1b"/>
+                                    <constraint firstItem="gzQ-LS-CTN" firstAttribute="top" secondItem="uZ2-yK-XlV" secondAttribute="top" id="VuQ-WM-Iid"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Jmm-ye-7Uq" secondAttribute="trailing" constant="10" id="2YL-3C-DZg"/>
+                            <constraint firstItem="Jmm-ye-7Uq" firstAttribute="leading" secondItem="ufP-mu-8xC" secondAttribute="leading" constant="10" id="9pW-9h-yiT"/>
+                            <constraint firstItem="uZ2-yK-XlV" firstAttribute="centerY" secondItem="ufP-mu-8xC" secondAttribute="centerY" id="DvZ-9s-2xh"/>
+                            <constraint firstAttribute="bottom" secondItem="Y7s-8I-92K" secondAttribute="bottom" id="TZL-of-rMA"/>
+                            <constraint firstAttribute="trailing" secondItem="Y7s-8I-92K" secondAttribute="trailing" id="bhh-fy-mm3"/>
+                            <constraint firstItem="uZ2-yK-XlV" firstAttribute="leading" secondItem="ufP-mu-8xC" secondAttribute="leading" id="ffS-w4-gdo"/>
+                            <constraint firstItem="Y7s-8I-92K" firstAttribute="top" secondItem="Jmm-ye-7Uq" secondAttribute="bottom" constant="20" id="txK-DG-1H9"/>
+                            <constraint firstAttribute="trailing" secondItem="uZ2-yK-XlV" secondAttribute="trailing" id="xqP-ko-wgw"/>
+                            <constraint firstItem="Y7s-8I-92K" firstAttribute="leading" secondItem="ufP-mu-8xC" secondAttribute="leading" id="yKZ-97-rrG"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q1m-Zr-ndE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1324" y="1027"/>
+        </scene>
         <!--Second-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="8rJ-Kc-sve" customClass="SecondViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
                         <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
@@ -84,7 +211,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TFPTabBarController" id="49e-Tb-3d3" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
@@ -99,6 +226,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="QPe-TI-ROD">
+            <objects>
+                <navigationController storyboardIdentifier="TFPSigninViewController" automaticallyAdjustsScrollViewInsets="NO" id="jVV-pa-HR1" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7fK-hD-a5U">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="LGx-e9-dc9" kind="relationship" relationship="rootViewController" id="7YP-As-O2h"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NCS-Ih-H2v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-356" y="1026.8365817091455"/>
         </scene>
     </scenes>
     <resources>
